@@ -1,0 +1,12 @@
+# dsh-fixed-port-bridge bundle layer.
+#
+# 固定端口只在这一行：改 config.port → 重启 DSH 生效。
+# 行名必须与 package.json 的 name 完全一致（DSH 按它解析到包目录）；
+# @ 开头的标量在 YAML 里是保留字符，必须加引号。
+# required: false —— 插件运行时出错时宿主跳过它，而不是让 DSH 起不来。
+- insert:
+    - id: fixed-port-bridge
+      name: "@ljwei-stak/dsh-fixed-port-bridge"
+      required: false
+      config:
+        port: 19387

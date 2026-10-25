@@ -1,0 +1,53 @@
+{
+  "name": "@ljwei-stak/dsh-fixed-port-bridge",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "给 DSH 一个固定的本地端口：在宿主进程内监听你指定的端口，转发到 DSH 每次启动都会变的随机 web 端口。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "bundle",
+    "coopanion",
+    "port",
+    "websocket",
+    "tcp-forward"
+  ],
+  "license": "MIT",
+  "author": "ljwei-stak",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "cordis.patch.yml",
+    "preflight.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node preflight.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alice-Marx/dsh-fixed-port-bridge.git"
+  },
+  "homepage": "https://github.com/Alice-Marx/dsh-fixed-port-bridge#readme",
+  "bugs": {
+    "url": "https://github.com/Alice-Marx/dsh-fixed-port-bridge/issues"
+  }
+}
